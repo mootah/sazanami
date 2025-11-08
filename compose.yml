@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "12000:12000"
+    volumes:
+      - .:/app
+    environment:
+      TURSO_DATABASE_URL: "file:/app/local.db"
+      TURSO_AUTH_TOKEN: "turso-auth-token-for-dev"
+      BETTER_AUTH_SECRET: "dummy-secret-for-dev-must-be-32-bytes"
+      BETTER_AUTH_URL: "http://localhost:12000"
+    command: npm run dev

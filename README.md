@@ -66,6 +66,36 @@ Sazanamiは「Markdownで書けるScrapbox」を基本コンセプトとした�
     ```
     ブラウザで `http://localhost:5173` にアクセスします。
 
+## Dockerでの実行
+
+1. **Dockerイメージをビルド**
+
+   ```bash
+   docker compose build
+   ```
+
+2. **コンテナを起動**
+
+   ```bash
+   docker compose up -d
+   ```
+
+3. **データベースの作成とマイグレーション**
+
+   ```bash
+   docker compose exec app npm run db:migrate
+   ```
+
+4. **アプリケーションにアクセス**
+
+   ブラウザで `http://localhost:12000` にアクセスします。
+
+5. **コンテナを停止**
+
+   ```bash
+   docker compose down
+   ```
+
 ## テスト
 
 ユニットテストを実行します。
